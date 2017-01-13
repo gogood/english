@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+{#        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />#}
+{#        <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#        <meta name="viewport" content="width=device-width, initial-scale=1">#}
+        <title>注册</title>
+
+        <!-- CSS -->
+
+        <link rel="stylesheet" href="/static/js/assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/js/assets/bootstrap/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="/static/assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/css/css/form-elements.css">
+        <link rel="stylesheet" href="/static/css/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="/static/assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/static/assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+    </head>
+    <style>
+        .li-text a:hover{
+            background-color:#FFFFFF;
+        }
+        .back-has-account {
+            display: block;
+            width: 60px;
+            height: 29px;
+            border-radius: 100px;
+            float: right;
+            border: 0px;
+            text-align: center;
+        }
+
+        .register-get-free-course {
+            font-size: 24px;
+            margin-top:10px;
+            margin-left:20px;
+            color: #ffffff;
+        }
+
+        .table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th{
+            padding:0px !important;
+        }
+
+        /*验证码*/
+        .add { width: 128px; height: 44px; float: left; _display: inline; cursor: pointer; margin-left: 30px; }
+
+        .sradd { width: 190px; text-indent: 4px; font-size: 14px; }
+
+        .reg-box li .input-code { width: 106px; padding: 10px; font-family: Arial; font-style: italic; color: red; letter-spacing: 1px; cursor: pointer; text-align: center; text-indent: 0; }
+
+        .phoKey { background: #3db1fa; text-align: center; line-height: 44px; color: #fff;letter-spacing: 3px; font-size:18px; }
+
+
+        .error { clear:both;display:block;color: red; padding-bottom:5px;height:20px;float: left; font-size:12px;line-height: 20px;}
+
+    </style>
+
+    <body>
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'index' %}">BootZard - Bootstrap Wizard Template</a>
+				</div>
+				
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+				    <div class="navbar-left register-get-free-course" >注册领取试听课</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<span class="li-text has_account" style="color: #3db1fa">
+								已有账号？
+							</span> 
+							<!--<a href="#"><strong>links</strong></a> -->
+							<span class="li-text">
+								<a href="{% url 'index' %}" class="back-has-account" style="color:#3db1fa;border: 0px;">返回</a>
+							</span>
+							<!--
+							<span class="li-social">
+								<a href="https://www.facebook.com/pages/Azmindcom/196582707093191" target="_blank"><i class="fa fa-facebook"></i></a> 
+								<a href="https://twitter.com/anli_zaimi" target="_blank"><i class="fa fa-twitter"></i></a> 
+								<a href="https://plus.google.com/+AnliZaimi_azmind" target="_blank"><i class="fa fa-google-plus"></i></a> 
+								<a href="https://github.com/AZMIND" target="_blank"><i class="fa fa-github"></i></a>
+							</span>
+							-->
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="container">
+                
+            <!--    <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>Free <strong>Bootstrap</strong> Wizard</h1>
+                        <div class="description">
+                       	    <p>
+                                This is a free responsive Bootstrap form wizard. 
+                                Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+                    	<form id="register_form" role="form" action="" method="post" class="f1">
+
+                            <!--
+                    		<h3>Register To Our App</h3>
+                    		<p>Fill in the form to get instant access</p> -->
+                    		<div class="f1-steps">
+                    			<div class="f1-progress">
+                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    			</div>
+                    			<div class="f1-step active">
+                    				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                    				<p>创建账号</p>
+                    			</div>
+                    			<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-key"></i></div>
+                    				<p>设置密码</p>
+                    			</div>
+                    		    <div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa-fw glyphicon glyphicon-ok"></i></div>
+                    				<p>注册成功</p>
+                    			</div>
+                    		</div>
+                    		
+                    		<fieldset>
+                    		   <!-- <h4>Tell us who you are:</h4> 
+							    
+								<div class="form-group">
+                                    <label class="sr-only" for="f1-last-name">孩子生日</label>
+                                    <input type="text" name="f1-last-name" placeholder="请选择孩子生日" class="f1-last-name form-control" id="f1-last-name">
+                                </div>
+
+							   -->
+                    			<div class="form-group" >
+                    			    <label  for="mobile" class="col-lg-3 col-md-3 col-sm-12 control-label">手机号码</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+									 <input type="text" name="mobile" placeholder="请输入你的手机号，免费获得上课提醒" class=" f1-first-name form-control"
+                                            id="f1-first-name">
+                                     <span class="error error-mobile-number"></span>
+									</div>
+                                </div>
+                                <div class="form-group" >
+                                    <label class="col-lg-3 col-md-3 col-sm-12 control-label" for="children_birthday">孩子生日</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+									 <div class="input-group date form_date" data-date="" data-date-format="yyyy MM dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                         <input name = "children_birthday" class="input-append child-birthday form-control" size="16" type="text" placeholder="请输入孩子生日" readonly>
+                                         <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+					                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                      </div>
+									  <span class="error error-child-birthday"></span>
+
+									  
+
+
+								<!--	<div class="input-append data form_datatime">
+									<input type="text" name="f1-last-name" placeholder="请选择孩子生日" class="f1-last-name form-control" id="f1-last-name">
+									<span class="add-on"><i class="icon-th"></i></span> 
+									</div>-->
+									
+									</div>
+                                </div>
+                                <div class="form-group" >
+                                    <label class="col-lg-3 col-md-3 col-sm-12 control-label" for="validate_number">验证码</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+                                        <input id="validate_number" type="text" name="validate_number" class="f1-about-yourself form-control sradd photokey" placeholder="请输入验证码" style="color:#999;ime-mode:disabled;-webkit-ime-mode:inactive;float:left"  />
+                                        <span for="validate_number_creator" class="add phoKey"></span>
+                                        <span class="error error-validate" ></span>
+									<!-- <input type="text" name="f1-about-yourself" placeholder="请输入右侧验证码" 
+                                    	                 class="f1-about-yourself form-control" id="f1-about-yourself"></input> -->
+									</div>
+                
+                                </div>
+                                <div class="form-group">
+                                <div id="click-recommend" class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                                    <span type="text">请点击这里输入推荐人手机号（选填）</span>
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                                </div>
+
+                                <div class="form-group">
+                                <div id="click-recommend-show" class="form-group hidden">
+                                    <label  for="f1-recommand-mobile" class="col-lg-3 col-md-3 col-sm-12 control-label">推荐人</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+									 <input type="text" name="" placeholder="推荐人手机号，没有可不填" class=" f1-recommand-mobile form-control" id="f1-recommand-mobile" >
+                                        <span class="error error-recommand-mobile"></span>
+									</div>
+                                </div>
+                                 </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                                    <input class= 'is_checked_box' type="checkbox"  checked disabled="true"/>
+                                    <span type="text">我已阅读并同意了<a href>《注册协议》</a></span>
+                                </div>
+
+                                <div class="f1-buttons col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-next middle-next" >下一步</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                     <h4 style="color:#fff" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">您的手机号</h4>
+                                     <h3 style="color:#FFFFFF" class="mobile-phone col-lg-12 col-md-12 col-sm-12 col-xs-12"></h3>
+                                </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                      <label class="col-lg-3 col-md-3 col-sm-12 col-xs-12 control-label" for="message_validate" >验证码</label>
+{#									<div class="">#}
+                                         <div class="input-group col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                         <input id="diffcult_validate_message" name = "validate_message" class=" message_validate form-control" size="16" type="text" placeholder="请输入短信验证码" >
+                                         <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                                         <span class="li-text" >
+								              <input id='change-validate-time' type="button" class="back-has-account"
+                                                     value="免费获取"
+                                                      />
+                                         </span>
+                                         <span class="error error_message_validate"></span>
+                                         </div>
+
+                                    </div>
+
+{#                                </div>#}
+
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <label class="col-lg-3 col-md-3 col-sm-12 control-label" for="password">密码</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-12" style="padding: 0px;" >
+                                        <input type="password" name="password" placeholder="请输入6-20个字母、数字、下划线" class="f1-password form-control" id="f1-password"
+                                               style="margin-bottom: 10px;">
+                                        <span class="error error-f1-password"></span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <label class="col-lg-3 col-md-3 col-sm-12 control-label" for="confirm_password" >确认密码</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-12" style="padding: 0px;">
+                                        <input type="password" name="confirm_password" placeholder="请再输入一次密码"
+                                                        class="f1-repeat-password form-control" id="f1-repeat-password" style="margin-bottom: 10px;">
+                                        <span class="error error-f1-repeat-password"></span>
+                                    </div>
+
+                                </div>
+                                <div class="f1-buttons col-lg-12 col-md-12 col-sm-12">
+{#                                    <button type="button" class="btn btn-previous">返回</button>#}
+                                    <button type="button" class="btn btn-next btn-next-submit">提交</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset id="success">
+                                <h4 style="color:#FFFFFF;height: 200px; text-align: center; padding-top: 60px;">恭喜您成功注册英文平台，<a href="{% url 'index' %}">点击</a>进行学习吧！！</h4>
+                            </fieldset>
+                    	
+                    	</form>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+
+    
+        <!-- Javascript -->
+{#        <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>#}
+{#        <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>#}
+{#        <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>#}
+	
+        <script src="/static/js/assets/js/jquery-1.11.1.min.js" charset="UTF-8"></script>
+        <script src="/static/js/assets/bootstrap/js/bootstrap.min.js" charset="UTF-8"></script>
+
+
+		<script src="/static/js/assets/bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+		 <script src="/static/js/assets/bootstrap/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+        <script src="/static/js/assets/bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+		
+
+
+
+        <script src="/static/js/assets/js/jquery.backstretch.min.js"></script>
+        <script src="/static/js/assets/js/retina-1.1.0.min.js"></script>
+        <script src="/static/js/assets/js/scripts.js"></script>
+		
+        
+        <!--[if lt IE 10]>
+            <script src="/static/js/assets/js/placeholder.js"></script>
+        <![endif]-->
+
+
+    </body>
+
+</html>

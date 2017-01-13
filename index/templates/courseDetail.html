@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="/static/css/user_css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/user_css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/Hui-iconfont_v1.0.8/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet"  href="/static/css/courseDetail.css">
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <title>课程详情</title>
+</head>
+<body>
+{% comment %}----------------------屏幕顶栏-----------begin-------------{% endcomment %}
+<div class="ml-nav ">
+    <div class="center-wrap clearfix">
+        <img class="ml-logo" src="/static/images/meilannote2_logo.png"/>
+
+        <p class="ml-link">
+            <a href="javascript:">首页</a>
+            <a href="{% url 'course' %}">课程</a>
+            <a href="javascript:">个人中心</a>
+        </p>
+        <button type="button" class="buy-now buy-now-login" data-toggle="modal" data-target="">注 册</button>
+        <button type="button" class="buy-now" data-toggle="modal" data-target="#myRegisterModal">登 录</button>
+
+        <div class="modal fade" id="myRegisterModal">
+            <div class="container">
+                <div id="loginbox" style="margin-top:50px;"
+                     class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <button type="button" class="cancel-modal close" data-dismiss="modal" aria-hidden="true">×
+                        </button>
+                        <div class="panel-heading">
+
+                            <div class="panel-title">登录</div>
+                            <div class="at-once-register"><a href="#">立即注册</a></div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body">
+
+                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                            <form id="loginform" class="form-horizontal" role="form">
+
+                                <div class="input-group input-group-lg input-data">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input id="login-username" type="text" class="form-control" name="username" value=""
+                                           placeholder="username or email">
+                                </div>
+
+                                <div class="input-group input-group-lg input-data">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="login-password" type="password" class="form-control" name="password"
+                                           placeholder="password">
+                                </div>
+
+
+                                <span class="input-data">
+                                     <label>
+                                         <input id="login-remember" type="checkbox" name="remember" value="1"
+                                                checked="checked">
+                                         下次自动登录
+                                     </label>
+                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<a href="" class="btn btn-link pull-right forget-password-offset">忘记密码?</a>
+				</span>
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls modal-footer-offset">
+
+
+                                        <a id="btn-login" href="#" class="btn btn-success">登 录 </a>
+
+                                        <a class="btn btn-default cancel-modal" data-dismiss="modal">取 消 </a>
+
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% comment %}------------------屏幕顶栏-----------end-------------{% endcomment %}
+
+{% comment %}--------------主体距离头部75px------begin------{% endcomment %}
+<div class="main-part1 container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <h3 class="course-title">2017年6月大学英语四级独家秘笈【名师精讲班】</h3>
+        </div>
+        <div class="book col-md-5 col-sm-12">
+            <img class="book-cover" src="/static/images/user_img/2.jpg">
+        </div>
+        <div class="info1 col-md-7 col-sm-12">
+            <p class="pay"><span><i class="fa fa-credit-card">20次卡</i></span></p>
+            <hr>
+            <p class="level"><span>适合学生水平：</span>零基础~Lv2</p>
+            <p class="courseAmount"><span>课时数：</span>48节课（每节课40分钟）</p>
+            <p><span></span></p>
+        </div>
+    </div>
+</div>
+
+<div class="main-part2 container">
+     <div class="row info2">
+
+    </div>
+</div>
+{% comment %}--------------主体------end------{% endcomment %}
+</body>
+</html>

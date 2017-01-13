@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% block header_css %}
+    {% include 'navigation.html' %}
+    {% endblock %}
+
+    <meta charset="UTF-8">
+    <title>课程</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/course-style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/jqpagination.css"/>
+    <link rel="stylesheet" href="/static/css/boostrap-button.css"/>
+    <link href="/static/css/Hui-iconfont_v1.0.8/1.0.8/iconfont.css" rel="stylesheet" type="text/css"/>
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/autocomplete.js" type="text/javascript"></script>
+    <script src="/static/js/course-select.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.jqpagination.min.js"></script>
+    <script src="/static/js/productList.js"></script>
+    <script src="/static/js/course-jquery.js" type="text/javascript"></script>
+    <script src="/static/js/test.js" type="text/javascript"></script>
+</head>
+<body>
+
+{% block header %}
+    {% include 'navigation.html' %}
+{% endblock %}
+
+{#<div class="login-container">#}
+{#    <div class="container">#}
+{#        <div class="row clearfix">#}
+{#            <div class="col-md-12 column">#}
+{#                <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">#}
+{#                    <div class="navbar-header">#}
+{#                        <button type="button" class="navbar-toggle" data-toggle="collapse"#}
+{#                                data-target="#bs-example-navbar-collapse-1"><span#}
+{#                                class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span#}
+{#                                class="icon-bar"></span><span class="icon-bar"></span></button>#}
+{#                        <a class="navbar-brand" href="#">选课中心</a>#}
+{#                    </div>#}
+{#                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">#}
+{#                        <ul class="nav navbar-nav">#}
+{#                            <li>#}
+{#                                <a href="#">首页</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#">Link</a>#}
+{#                            </li>#}
+{#                            <li class="dropdown">#}
+{#                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong#}
+{#                                        class="caret"></strong></a>#}
+{#                                <ul class="dropdown-menu">#}
+{#                                    <li>#}
+{#                                        <a href="#">Action</a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">Another action</a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">Something else here</a>#}
+{#                                    </li>#}
+{#                                    <li class="divider">#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">Separated link</a>#}
+{#                                    </li>#}
+{#                                    <li class="divider">#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">One more separated link</a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                        <ul class="nav navbar-nav navbar-right">#}
+{#                            <li>#}
+{#                                <a href="#">登录</a>#}
+{#                            </li>#}
+{#                            <li class="dropdown">#}
+{#                                <a href="#" >注册</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </nav>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#</div>#}
+<div class="parent">
+    <!-----------------------搜索框----开始----------------------------------->
+    <div class="search">
+        <div class="wrapper">
+            <div id="search-form"></div>
+            <div class="title-logo">
+                <img src="/static/images/filtr-item/title-logo.png">
+            </div>
+        </div>
+    </div>
+    <!-----------------------搜索框----结束----------------------------------->
+
+    <!-----------------------分类框----开始----------------------------------->
+    <div class="container">
+        <div class="classify">
+            <div class="course_select_container">
+            </div>
+        </div>
+        <!-----------------------课程列表----开始----------------------------------->
+        <div class="list">
+            <div class="list-container">
+                <div class="list-nav">
+                    <span class="time active" id="-">时间</span>
+                    <span class="price" id="0">价格</span>
+                    <span class="population" id="0">人气</span>
+
+                    <div class="switch_thumb right" style="display: inline-block ;float: right;margin-right: 10px">
+                        <div class="sw" style="display: inline-block;width: 20px;height: 20px;margin:12px 0 0 11px">
+                        </div>
+                    </div>
+                    <div class="switch_thumb left show" style="display: inline-block ;float: right">
+                        <div class="sw"
+                             style="display: inline-block;width: 20px;height: 20px;margin:12px 0 0 11px;">
+                            〓
+                        </div>
+                    </div>
+                    <div class="gigantic pagination">
+                        <!--<a href="#" class="first" data-action="first">&laquo;</a>-->
+                        <a href="#" class="previous" data-action="previous"><</a>
+                        <input type="text" readonly="readonly"/>
+                        <a href="#" class="next" data-action="next">></a>
+                        <!--<a href="#" class="last" data-action="last">&raquo;</a>-->
+                    </div>
+                </div>
+                <hr/>
+                <div class="my_container">
+                    <div class="display">
+                        <div class="bird"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="list-foot">
+            <div class="foot pagination">
+                <a href="#" class="first" data-action="first">首页</a>
+                <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+                <input type="text" readonly="readonly"/>
+                <a href="#" class="next" data-action="next">&rsaquo;</a>
+                <a href="#" class="last" data-action="last">末页</a>
+            </div>
+        </div>
+        <!-----------------------课程列表----结束----------------------------------->
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <!--<h4 class="modal-title" id="myModalLabel">PEP开心学英语</h4>
+                <h5 class="Hui-iconfont Hui-iconfont-cang collect"></h5>-->
+                <div class="head-left">
+                    <div class="container">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                                data-target="#bs-example-navbar-collapse-2"><span class="sr-only">Toggle navigation</span><span
+                                                class="icon-bar"></span><span class="icon-bar"></span><span
+                                                class="icon-bar"></span></button>
+                                        <a class="navbar-brand" href="#">PEP开心学英语</a>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li>
+                                                <a class="Hui-iconfont collect"></a>
+                                            </li>
+                                            <li>
+                                                <a class="Hui-iconfont like"></a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xm-12">
+                            <img src="images/filtr-item/sample.gif">
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xm-12">
+                            <div class="info_1">
+                                <p class="cost">10次次卡</p>
+
+                                <p class="course_level">零基础-4级</p>
+
+                                <p class="course_number">共48课时</p>
+
+                                <p class="watch Hui-iconfont Hui-iconfont-bofang">免费试听
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xm-12 descr">
+                            <div class="container">
+                                <div class="row clearfix">
+                                    <div class="col-md-12 column ">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#" class="_1">简介</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="_2">课程目标</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="_3">信息</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xm-12 descr-content">
+                            <p class="active _1">本报北京12月26日电
+                                （记者徐隽）中共中央政治局委员、中央政法委书记孟建柱25日在京会见最高人民法院6个巡回法庭的全体法官和工作人员。他强调，要深入贯彻习近平总书记系列重要讲话精神，探索完善具有中国特色社会主义巡回法庭制度，更好满足人民群众司法需求，维护社会公平正义。</p>
+                            <p class="_2">
+                                孟建柱要求，要认真学习借鉴第一、第二巡回法庭的改革经验，严格落实司法责任制，建立和完善新型审判运行机制，建立扁平化管理模式，探索完善具有中国特色社会主义的巡回法庭制度。要健全完善司法便民利民机制，实现巡回开庭、巡回听证、巡回阅卷、巡回接访。要重视加强信息化建设，充分运用智能化系统，改进诉讼服务，深化司法公开，让正义以看得见的方式实现</p>
+                            <p class="_3">以刻画人物形象为中心，通过完整的故事情节和环境描写来反映社会生活的文学体裁。人物、情节、环境是小说的三要素。情节一般包括开端、发展、高潮、结.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">立即购买</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+{#{% block ni %}#}
+{#    <meta charset="utf-8">#}
+{#    <title>fullPage.js制作魅蓝note2页面演示_dowebok</title>#}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/jquery.fullPage.css">#}
+{#    <link rel="stylesheet" type="text/css" href="/static/css/style.css">#}
+{#    <link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen"/>#}
+{#    <link rel="stylesheet" href="/static/css/responsive.css" type="text/css" media="all"/>#}
+{#    <link rel="stylesheet" href="/static/css/boostrap-button.css" type="text/css" media="all"/>#}
+{#    {% comment %}<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>{% endcomment %}#}
+{#    <!-- 新 Bootstrap 核心 CSS 文件 -->#}
+{#    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">#}
+{##}
+{#    <!-- 可选的Bootstrap主题文件（一般不用引入） -->#}
+{#    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">#}
+{##}
+{#    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->#}
+{#    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>#}
+{##}
+{#    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->#}
+{#    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>#}
+{#    <script type="text/javascript" src="/static/js/index-jquery.js"></script>#}
+{#    <!--重设flexslider的样式-->#}
+{#    <link rel="stylesheet" href="/static/css/flexslider2.css" type="text/css" media="all">#}
+{##}
+{#{% endblock %}#}
+
+{% block header_css %}
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+{% endblock %}
+
+{% block header %}
+    <div class="container">
+    <div class="row">
+
+          <div class="ml-nav col-lg-12 col-md-12 col-xs-12">
+    <div class="center-wrap clearfix">
+        <img class="ml-logo" src="/static/images/meilannote2_logo.png"/>
+        <p class="ml-link col-md-3 col-xs-5">
+            <a id='firstSlider' href="javascript:">首页</a>
+            <a href="{% url 'course' %}">课程</a>
+            <a href="javascript:" id="user_center">个人中心</a>
+        </p>
+        {% if is_login.result == 'true' %}
+            <div id="login_success col-xs-5" class="student-block">
+
+                <div id="myCollapsible" style="text-align: center">
+{#                    <h4 style="margin-bottom: 0px;">#}
+{#                        <a data-toggle="collapse" data-parent="#login_success" href="#student_name" class="greet">Hi,{{ is_login.student }}</a>#}
+{#                    </h4>#}
+                    <h4 class="greet"><a href="#student_name" data-toggle="collapse">Hi,{{ is_login.student }}</a></h4></div>
+
+                <div id="student_name" class="collapse">
+
+                    <a  href="{% url 'logout' %}" class=" logout"><button class="logout-out">退出</button></a>
+
+                </div>
+            </div>
+            {% else %}
+{#            <div id="login_success" class="hidden">#}
+{#                <h4 class="back-has-account greet"></h4>#}
+{#            <span class="li-text">#}
+{#								<a  href="{% url 'logout' %}" class="back-has-account logout">退出</a>#}
+{#							</span>#}
+{#            </div>#}
+            <div id="login_success col-xs-5" class="student-block hidden">
+
+                <div id="myCollapsible"> <h4 class="greet"><a href="#student_name" data-toggle="collapse"></a></h4></div>
+
+                <div id="student_name" class="collapse">
+
+                    <a  href="{% url 'logout' %}" class=" logout"><button class="logout-out">退出</button></a>
+
+                </div>
+            </div>
+
+            <div id="change_after_login col-xs-5" >
+                <a href={% url 'register' %}><button type="button" class="buy-now buy-now-login" data-toggle="modal" data-target="" >注 册</button></a>
+                <button type="button" class="buy-now" data-toggle="modal" data-target="#myRegisterModal">登 录</button>
+            </div>
+        {% endif %}
+
+
+        <div class="modal fade" id="myRegisterModal">
+            <div class="container">
+                <div id="loginbox" style="margin-top:50px;"
+                     class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <button type="button" class="cancel-modal close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <div class="panel-heading" style="background-image: linear-gradient(to bottom,#64c5fa 0,#64c5fa 100%);">
+
+                            <div class="panel-title" style="color:#ffffff">登录</div>
+                            <div class="at-once-register"><a href="{% url 'register' %}"  style="color:#ffffff">立即注册</a></div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body">
+
+                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                            <form id="loginform" class="form-horizontal" role="form">
+
+                                <div class="input-group input-group-lg input-data" style="margin-bottom: 0px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input id="login-username" type="text" class="f1-first-name form-control" name="username" value=""
+                                           placeholder="请输入您的手机号">
+                                </div>
+                                 <span id="error_mobile" class="error"></span>
+
+
+                                <div class="input-group input-group-lg input-data" style="margin-top: 20px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="login-password" type="password" class="form-control" name="password"
+                                           placeholder="请输入密码">
+                                </div>
+                                <div class="input-group" style="position: relative;text-align: center">
+                                     <span class="error" id="error_message" ></span>
+                                </div>
+
+
+                                <span class="input-data">
+                                     <label>
+                                         <input id="login-remember" type="checkbox" name="remember" value="1" >
+                                         下次自动登录
+                                     </label>
+                    <input type="checkbox" name="remember_me" id="remember_me"  class="hidden">
+					<a href="{% url 'forget_password' %}" class="btn btn-link pull-right forget-password-offset">忘记密码?</a>
+				</span>
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls modal-footer-offset">
+
+
+                                        <a id="btn-login" href="#" class="btn btn-success" style="background-image: linear-gradient(to bottom,#31a5e7 0,#31a5e7 100%)">登 录 </a>
+
+                                        <a class="btn btn-default cancel-modal" data-dismiss="modal"  >取 消 </a>
+
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+    </div>
+
+{% endblock%}

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-user_js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-user_js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-user_js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>个人中心</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/static/css/user_css/normalize.css">
+    <link rel="stylesheet" href="/static/css/user_css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/user_css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/user_css/templatemo-style.css">
+    <link rel="stylesheet" href="/static/css/userCenter-style2.css">
+    <link rel="stylesheet" href="/static/css/Hui-iconfont_v1.0.8/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <script src="/static/js/user_js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/userCenter.js"></script>
+
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="ml-nav ">
+    <div class="center-wrap clearfix">
+        <img class="ml-logo" src="/static/images/meilannote2_logo.png"/>
+
+        <p class="ml-link">
+            <a href="javascript:">首页</a>
+            <a href="{% url 'course' %}">课程</a>
+            <a href="javascript:">个人中心</a>
+        </p>
+        <button type="button" class="buy-now buy-now-login" data-toggle="modal" data-target="">注 册</button>
+        <button type="button" class="buy-now" data-toggle="modal" data-target="#myRegisterModal">登 录</button>
+
+        <div class="modal fade" id="myRegisterModal">
+            <div class="container">
+                <div id="loginbox" style="margin-top:50px;"
+                     class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <button type="button" class="cancel-modal close" data-dismiss="modal" aria-hidden="true">×
+                        </button>
+                        <div class="panel-heading">
+
+                            <div class="panel-title">登录</div>
+                            <div class="at-once-register"><a href="#">立即注册</a></div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body">
+
+                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                            <form id="loginform" class="form-horizontal" role="form">
+
+                                <div class="input-group input-group-lg input-data">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input id="login-username" type="text" class="form-control" name="username" value=""
+                                           placeholder="username or email">
+                                </div>
+
+                                <div class="input-group input-group-lg input-data">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="login-password" type="password" class="form-control" name="password"
+                                           placeholder="password">
+                                </div>
+
+
+                                <span class="input-data">
+                                     <label>
+                                         <input id="login-remember" type="checkbox" name="remember" value="1"
+                                                checked="checked">
+                                         下次自动登录
+                                     </label>
+                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<a href="" class="btn btn-link pull-right forget-password-offset">忘记密码?</a>
+				</span>
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls modal-footer-offset">
+
+
+                                        <a id="btn-login" href="#" class="btn btn-success">登 录 </a>
+
+                                        <a class="btn btn-default cancel-modal" data-dismiss="modal">取 消 </a>
+
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% comment %}----------导航 begin-当屏幕变窄的时候用---------------{% endcomment %}
+<div class="responsive-header visible-xs visible-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-section">
+                    {% comment %}用户头像{% endcomment %}
+                    <div class="profile-image">
+                        <img src="/static/images/user_img/profile.jpg" alt="Hi! 朱秀美">
+                    </div>
+                    <div class="profile-content">
+                        <h3 class="profile-title">Hi! 朱秀美</h3>
+
+                        <p class="profile-description">描述</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+
+        <div class="main-navigation responsive-menu">
+            <ul class="navigation">
+                <li><a href="#top"><i class="fa fa-book fa-5x"></i>我的课程</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i>About Me</a></li>
+                <li><a href="#projects"><i class="fa fa-newspaper-o"></i>My Gallery</a></li>
+                <li><a href="#contact"><i class="fa fa-envelope"></i>Contact Me</a></li>
+                <li><a href="#top"><i class="fa fa-book fa-5x"></i>我的课程</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+{% comment %}----------导航 end----------------{% endcomment %}
+
+<!-- SIDEBAR --导航---屏幕大的时候在侧边---begin--->
+<div class="sidebar-menu hidden-xs hidden-sm">
+    <div class="top-section">
+        <div class="profile-image">
+            <img src="/static/images/user_img/profile.jpg" alt="Hi, Honey!">
+        </div>
+        <h3 class="profile-title">Hi, 秀美!</h3>
+
+        <p class="number">学号：1305543253</p>
+
+        <p class="level">水平：中等</p>
+
+        <p class="profile-description">剩余次卡：10次卡</p>
+    </div>
+    <!-- top-section -->
+    <div class="main-navigation">
+        <ul class="navigation">
+            <li id="study-system"><a><i class="fa fa-book fa-5x"></i>学习系统</a></li>
+            <li id="courses"><a><i class="fa fa-pencil"></i>课程管理</a></li>
+            <li id="dub"><a><i class="fa fa-paperclip"></i>我的配音</a></li>
+            <li id="director"><a><i class="fa fa-link"></i>我的班主任</a></li>
+        </ul>
+
+    </div>
+    <!-- .main-navigation -->
+    <div class="social-icons">
+        <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+        </ul>
+    </div>
+    <!-- SIDEBAR --导航---屏幕大的时候在侧边---end--->
+    <!-- .social-icons -->
+</div>
+<!-- .sidebar-menu -->
+
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">免费模板</a></div>
+
+<div class="banner-bg" id="top">
+    <div id="study-system">
+        <div class="item-title"><i class="fa fa-book fa-2x"> 学习系统</i></div>
+        <div class="item">
+            <ul class="item1 nav nav-tabs">
+                <li class="active" id="orders"><a href="#">预约</a></li>
+                <li id="collections"><a href="#">收藏</a></li>
+            </ul>
+            <div class="split">
+                <hr>
+            </div>
+            <div class="item2">
+                <div class="orders container active">
+                    <p class="countOrders">您有6个预约</p>
+
+                    <div class="row ordered">
+                        <div class="li col-md-2 col-sm-3 col-xm-6">
+                            <div class="info time">
+                                <span>2002/09/05</span>
+                                <span>星 期 日</span>
+                                <span>10 : 15 : 00</span>
+                                <span class="detail" data-toggle="modal" data-target="#myModal">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="li col-md-2  col-sm-3 col-xm-6">
+                            <div class="info">
+                                <span>2002/09/05</span>
+                                <span>星 期 日</span>
+                                <span>10 : 15 : 00</span>
+                                <span class="detail" data-toggle="modal" data-target="#myModal">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="li col-md-2 col-sm-3 col-xm-6">
+                            <div class="info">
+                                <span>2002/09/05</span>
+                                <span>星 期 日</span>
+                                <span>10 : 15 : 00</span>
+                                <span class="detail" data-toggle="modal" data-target="#myModal">查看详情</span>
+
+                            </div>
+                        </div>
+                        <div class="li col-md-2 col-sm-3 col-xm-6">
+
+                            <div class="info">
+                                <span>2002/09/05</span>
+                                <span>星 期 日</span>
+                                <span>10 : 15 : 00</span>
+                                <span class="detail" data-toggle="modal" data-target="#myModal">查看详情</span>
+
+                            </div>
+                        </div>
+                        <div class="li col-md-2  col-sm-3 col-xm-6">
+                            <div class="info">
+                                <span>2002/09/05</span>
+                                <span>星 期 日</span>
+                                <span>10 : 15 : 00</span>
+                                <span class="detail" data-toggle="modal" data-target="#myModal">查看详情</span>
+
+                            </div>
+                        </div>
+                        <div class="li col-md-2 col-sm-4 col-xm-6">
+                            <div class="info">
+                                <span>2002/09/05</span>
+                                <span>星 期 日</span>
+                                <span>10 : 15 : 00</span>
+                                <span class="detail" data-toggle="modal" data-target="#myModal">查看详情</span>
+
+                            </div>
+                        </div>
+                        <div class="li col-md-2 col-sm-4 col-xm-6">
+                            <div class="info last">
+                                <span>+</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="recommend ">
+                        <div class="col-md-12 col-sm-12 title">
+                            <span>
+                                人气推荐
+                            </span>
+                            <hr>
+                        </div>
+                        <div class="row book-row">
+                        <div class="col-md-12 col-sm-12">
+                            <span class="title">
+                                教材推荐
+                            </span>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/1.jpg" alt="">
+                                <span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">PEP开心学英语</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                            cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/2.jpg" alt="">
+<span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">经典英语，哈弗不是问题</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                            cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/3.jpg" alt="">
+<span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">青少年轻松口语</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                            cursus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/4.jpg" alt="">
+<span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">史上最牛的英语口语</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                            nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/5.jpg" alt="">
+<span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">little time,more speech英语</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                            nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/6.jpg" alt="">
+<span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">疯狂英语系列</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                            nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <div class="collection-add">
+                                    更多教程
+                                </div>
+
+                            </div>
+                        </div>
+                            </div>
+                        <div class="row teacher-row">
+                        <div class="col-md-12 col-sm-12">
+                            <span class="title">
+                                教材推荐
+                            </span>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/1.jpg" alt="">
+                                <span class="book-name">外教： Miss Scotfue</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">PEP开心学英语</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                            cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/2.jpg" alt="">
+<span class="book-name">外教： Miss Scotfue</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">经典英语，哈弗不是问题</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                            cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/3.jpg" alt="">
+<span class="book-name">教程:PEP 开心学英语</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">青少年轻松口语</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                            cursus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/4.jpg" alt="">
+<span class="book-name">外教： Miss Scotfue</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">史上最牛的英语口语</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                            nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/5.jpg" alt="">
+<span class="book-name">外教： Miss Scotfue</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">little time,more speech英语</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                            nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/6.jpg" alt="">
+<span class="book-name">外教： Miss Scotfue</span>
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">疯狂英语系列</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                            nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-item col-md-3 col-sm-6">
+                            <div class="project-item">
+                                <div class="collection-add">
+                                    去浏览更多外交
+                                </div>
+
+                            </div>
+                        </div>
+                            </div>
+                    </div>
+
+                </div>
+                <div class="collections">
+                    <div class="page-section" id="projects">
+                        <ul class="collection-subNav">
+                            <li class="book"><a href="#collectionBooks">教材</a></li>
+                            <li class="teacher"><a href="#collectionTeachers">外教</a></li>
+                        </ul>
+                        {% comment %}教材{% endcomment %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="widget-title" id="collectionBooks"> 收藏的教材(一共6本)</h4>
+                            </div>
+                        </div>
+                        <div class="row projects-holder ">
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/1.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">PEP开心学英语</a></h5>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                                cursus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/2.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">经典英语，哈弗不是问题</a></h5>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                                cursus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/3.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">青少年轻松口语</a></h5>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                                cursus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/4.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">史上最牛的英语口语</a></h5>
+
+                                            <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                                nisl
+                                                tempus commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/5.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">little time,more speech英语</a></h5>
+
+                                            <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                                nisl
+                                                tempus commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/6.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">疯狂英语系列</a></h5>
+
+                                            <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                                nisl
+                                                tempus commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <div class="collection-add fa fa-plus fa-3x">
+                                    </div>
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <p>
+                                                点击进行收藏更多课程
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% comment %}老师{% endcomment %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="widget-title" id="collectionTeachers">收藏的教师(一共6位)</h4>
+                            </div>
+                        </div>
+                        <div class="row projects-holder">
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/1.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">PEP开心学英语</a></h5>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                                cursus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/2.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">经典英语，哈弗不是问题</a></h5>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                                cursus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/3.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">青少年轻松口语</a></h5>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                                                cursus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/4.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">史上最牛的英语口语</a></h5>
+
+                                            <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                                nisl
+                                                tempus commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/5.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">little time,more speech英语</a></h5>
+
+                                            <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                                nisl
+                                                tempus commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-item col-md-3 col-sm-6">
+                                <div class="project-item">
+                                    <img src="/static/images/user_img/6.jpg" alt="">
+
+                                    <div class="project-hover">
+                                        <div class="inside">
+                                            <h5><a href="#">疯狂英语系列</a></h5>
+
+                                            <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et
+                                                nisl
+                                                tempus commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .projects-holder -->
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="courses">
+        <div class="item-title"><i class="fa fa-book fa-2x"> 课程管理</i></div>
+        <div class="item">
+            <ul class="item1 nav nav-tabs">
+                <li class="active" id="courseRecord"><a href="#">上课记录</a></li>
+                <li id="myBooks"><a href="#">我的课程</a></li>
+                <li><a href="#">我的教材</a></li>
+            </ul>
+            <div class="item2" id="courseRecord">
+                <h2 class="recordTitle">
+                    我的学习记录
+                    <span>(共100条)</span></h2>
+                <dl class="recordList">
+                    <dt>
+                    <p>12-28</p>
+                    </dt>
+                    <dd>
+                        <p class="record_Time">22:52</p>
+
+                        <div class="record_jd"></div>
+                        <div class="record_Info">
+                            <div class="record_arr">◆</div>
+                            <div class="record_Intro">
+                                <p><span>课时</span><a href="javascript:;"
+                                                     onclick="javascript:window.open('/lession/id-36521.html','_blank')">站点地图、部件、母板</a>
+                                </p>
+
+                                <p style="color:#999;"><span>外教</span><a style="color:#999;" href="#">Mr Gelin<a></p>
+
+                                <p class="record_Intro_Title"><span>来自课程：</span><a href="javascript:;"
+                                                                                   onclick="javascript:window.open('/course/course_id-1933.html','_blank')">Axure
+                                    RP7.0标准视频教程</a></p>
+                            </div>
+                            <div class="record_Action cover">
+                                <i class="fa fa-file-text-o"></i>
+
+                                <p class="DelOne"><a href="javascript:void(0);" onclick="return DelOne(36521)">复习</a>
+                                </p>
+                            </div>
+                            <div class="record_Action">
+                                <i class="fa fa-plus-circle"></i>
+
+                                <p class="DelOne"><a href="javascript:void(0);" onclick="return DelOne(36521)">申请补课</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </dd>
+                    <dd>
+                        <p class="record_Time">22:52</p>
+
+                        <div class="record_jd"></div>
+                        <div class="record_Info">
+                            <div class="record_arr">◆</div>
+                            <div class="record_Intro">
+                                <p><span>课时</span><a href="javascript:;"
+                                                     onclick="javascript:window.open('/lession/id-36521.html','_blank')">站点地图、部件、母板</a>
+                                </p>
+
+                                <p style="color:#999;"><span>外教</span><a style="color:#999;" href="#">Ms B.M</a></p>
+
+                                <p class="record_Intro_Title"><span>来自课程：</span><a href="javascript:;"
+                                                                                   onclick="javascript:window.open('/course/course_id-1933.html','_blank')">Axure
+                                    RP7.0标准视频教程</a></p>
+                            </div>
+                            <div class="record_Action cover">
+                                <i class="fa fa-file-text-o"></i>
+
+                                <p class="DelOne"><a href="javascript:void(0);" onclick="return DelOne(36521)">复习</a>
+                                </p>
+                            </div>
+
+                            <div class="record_Action">
+                                <i class="fa fa-plus-circle"></i>
+
+                                <p class="DelOne"><a href="javascript:void(0);" onclick="return DelOne(36521)">申请补课</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </dd>
+                    <dd>
+                        <p class="record_Time">22:52</p>
+
+                        <div class="record_jd"></div>
+                        <div class="record_Info">
+                            <div class="record_arr">◆</div>
+                            <div class="record_Intro">
+                                <p><span>课时</span><a href="javascript:;"
+                                                     onclick="javascript:window.open('/lession/id-36521.html','_blank')">站点地图、部件、母板</a>
+                                </p>
+
+                                <p style="color:#999;"><span>外教</span><a style="color:#999;" href="#">Mr Justin</a></p>
+
+                                <p class="record_Intro_Title"><span>来自课程：</span><a href="javascript:;"
+                                                                                   onclick="javascript:window.open('/course/course_id-1933.html','_blank')">Axure
+                                    RP7.0标准视频教程</a></p>
+
+
+                            </div>
+                            <div class="record_Action cover">
+                                <i class="fa fa-file-text-o"></i>
+
+                                <p class="DelOne"><a href="javascript:void(0);" onclick="return DelOne(36521)">复习</a>
+                                </p>
+                            </div>
+                            <div class="record_Action">
+                                <i class="fa fa-plus-circle"></i>
+
+                                <p class="DelOne"><a href="javascript:void(0);" onclick="return DelOne(36521)">申请补课</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="item2" id="myBooks">
+                <div class="page-section" id="projects">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">PHOTOS OF WHAT I DO</h4>
+
+                            <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum
+                                velit.
+                                Nam nec tellus a odio tincidunt auctor a ornare odio. Maecenas et lorem molestie,
+                                maximus
+                                justo dignissim, cursus nisl. Nullam at ante quis ex pharetra pulvinar quis id dolor.
+                                Integer lorem odio, euismod ut sem sit amet, imperdiet condimentum diam.</p>
+                        </div>
+                    </div>
+                    <div class="row projects-holder">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/1.jpg" alt="">
+
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/2.jpg" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/3.jpg" alt="">
+
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/4.jpg" alt="">
+
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/5.jpg" alt="">
+
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="/static/images/user_img/6.jpg" alt="">
+
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et nisl
+                                            tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .projects-holder -->
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="dub">
+        <div class="item-title"><i class="fa fa-book fa-2x"> 我的配音</i></div>
+        <div class="item">
+            我的配音
+        </div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <div class="fluid-container">
+        <div class="content-wrapper">
+            <!-- ABOUT -->
+            <div class="page-section" id="about">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="widget-title">Learn About Me</h4>
+
+                        <div class="about-image">
+                            <img src="/static/images/user_img/8.jpg" alt="about me">
+                        </div>
+                        <p>Volton is free <a rel="nofollow" href="http://www.templatemo.com/page/1">responsive mobile
+                            template</a> from <span class="blue">template</span><span class="green">mo</span> website.
+                            You can use this template for any purpose. Please tell your friends about it. Thank you.
+                            Credit goes to <a rel="nofollow" href="#">Unsplash</a> for images used in this design. You
+                            can <strong>change menu icons</strong> by checking <a rel="nofollow"
+                                                                                  href="#/font-awesome-icon-world-map/">Font
+                                Awesome</a> (version 4). Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong>
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+                <!-- #about -->
+            </div>
+            <!-- PROJECTS -->
+
+            <!-- CONTACT -->
+            <div class="page-section" id="contact">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="widget-title">PLACE TO TALK WITH ME</h4>
+
+                        <p>Vestibulum ac iaculis erat, in semper dolor. Maecenas et lorem molestie, maximus justo
+                            dignissim, cursus nisl. Nullam at ante quis ex pharetra pulvinar quis id dolor. Integer
+                            lorem odio, euismod ut sem sit amet, imperdiet condimentum diam.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <form action="#" method="post" class="contact-form">
+                        <fieldset class="col-md-4 col-sm-6">
+                            <input type="text" id="your-name" placeholder="Your Name...">
+                        </fieldset>
+                        <fieldset class="col-md-4 col-sm-6">
+                            <input type="email" id="email" placeholder="Your Email...">
+                        </fieldset>
+                        <fieldset class="col-md-4 col-sm-12">
+                            <input type="text" id="your-subject" placeholder="Subject...">
+                        </fieldset>
+                        <fieldset class="col-md-12 col-sm-12">
+                            <textarea name="message" id="message" cols="30" rows="6"
+                                      placeholder="Leave your message..."></textarea>
+                        </fieldset>
+                        <fieldset class="col-md-12 col-sm-12">
+                            <input type="submit" class="button big default" value="Send Message">
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- .contact-form -->
+            </div>
+            <hr>
+
+            <div class="row" id="footer">
+                <div class="col-md-12 text-center">
+                    <p class="copyright-text">Copyright &copy; 2084 Company Name | More Templates <a
+                            href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a
+                            href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% comment %}<script src="user_js/vendor/jquery-1.10.2.min.js"></script>{% endcomment %}
+{% comment %}<script src="/static/js/user_js/min/plugins.min.js"></script>{% endcomment %}
+<script src="/static/js/user_js/min/main.min.js"></script>
+
+
+{% comment %}模态框展示{% endcomment %}
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">预约课程详情</h4>
+            </div>
+            <div class="modal-body container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="book-picture" src="/static/images/user_img/1.jpg">
+                    </div>
+                    <div class="courseOnDetail col-md-9">
+                        <span><a href="#">教材名：PEP学英语</a></span>
+                        <span>课时：第三节课</span>
+                        <span>课长：40分钟</span>
+                        <span><a href="#">外教：Ms B.M</a></span>
+                        <span>上课时间：2016-09-12 12:30 星期三</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="courseContent col-md-12">
+                        <span>上课的内容：<br>1、掌握动词的时态;2、掌握 How are you句型;3、How的其他用法</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">取消预约</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+</body>
+</html>
