@@ -1,9 +1,0 @@
-思维导图：
-MindManager(http://www.mindjet.jp/)
-
-FreeMind(http://www.freemind-club.com/)
-
-可实现一元化管理扫描图像文件夹的文件管理软件
-PaperPort(http://japan.nuance.com/paper-port/)
-
-轻松管理名片PRO(http://mediadrive.jp/)
