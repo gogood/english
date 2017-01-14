@@ -1,0 +1,599 @@
+/*
+/!*------------------head-bar----开始---------------------------*!/
+.head-bar .nav.navbar-nav.navbar-right {
+    margin-right: 10px;
+}
+
+.head-bar .navbar-inverse .navbar-brand{
+    color:white;
+}
+.hh{
+
+    width:200px;
+    height:300px;
+    border: 1px solid;
+    position: absolute;
+    left:0;
+    right:0;
+    top:100px;
+    margin: auto;
+}
+
+/!*------------------head-bar------结束-------------------------*!/*/
+/*---------------------------------------------*/
+body {
+    background-color: #ddd;
+}
+
+/*----------------------------------------------*/
+.sidebar-menu {
+    width: 21%;
+}
+
+.main-content, .banner-bg {
+    width: 79%;
+}
+
+.page-section {
+    padding-top: 30px;
+}
+
+.top-section {
+    padding: 40px 40px 20px 40px;
+}
+
+.navigation li > a {
+    font-size: 10px;
+    padding: 5px 40px;
+
+}
+
+.top-section p, h3.profile-title, .navigation li > a {
+    color: rgb(0, 102, 204);
+}
+
+.navigation li > a > li {
+    font-size: 15px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+}
+
+.banner-bg {
+    width: 76%;
+    margin-right: 1%;
+    margin-top: 75px;
+    padding: 60px 30px 30px 30px;
+    background-color: #fff;
+    border-radius: 20px;
+
+}
+
+h4.widget-title {
+    margin-bottom: 0;
+}
+
+/*--------------------------侧导航-----begin------------------*/
+.main-navigation li.active {
+    margin-left: 36px;
+}
+
+.main-navigation li.active, .main-navigation li.active:hover a {
+    background: #ddd;
+    border-radius: 10px 0 0 10px;
+}
+
+.main-navigation li:hover a {
+    background-color: #d1d1d1;
+}
+
+.sidebar-menu {
+
+    background-color: #fff;
+    margin-top: 75px;
+    margin-left: 1%;
+
+}
+
+/*--------------------------侧导航-----结束------------------*/
+/*------------每个item导航-----begin-------------------*/
+div#study-system {
+    position: relative;
+}
+
+.item {
+    margin-top: 20px;
+    position: relative;
+}
+
+.item > hr {
+    position: absolute;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background: #dddddd;
+    margin-top: 40px;
+    margin-bottom: 0;
+    z-index: -1;
+}
+
+/*------------每个item导航-----end-------------------*/
+
+/*----------------collection 二级导航---------begin-----------*/
+
+/*----------------collection 二级导航---------end-----------*/
+
+/*---------------------------管理外教--------------------------------------*/
+
+.item-title > i {
+    font-size: 30px;
+    padding: 10px 10px 20px 0;
+    color: black;
+}
+
+.item-title > i:before {
+    font-size: 50px;
+    color: #0066CC;
+}
+
+.item2 {
+    border-bottom: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    padding-bottom: 100px;
+}
+
+.item1.nav-tabs {
+    border-bottom: 2px solid #ddd;
+}
+
+.item1.nav-tabs > li {
+    background: url(/static/images/user_img/book3.png);
+    float: left;
+    margin-bottom: -2px;
+    background-size: 100% 100%;
+}
+
+.item1.nav-tabs > li > a {
+
+    width: 70px;
+    height: 70px;
+    font-size: 18px;
+    margin-right: 4px;
+    border-radius: 6px;
+    color: black;
+    border: none;
+}
+
+.item1.nav-tabs > li.active {
+    background: url(/static/images/user_img/book2.png);
+    background-size: 100% 100%;
+}
+
+.item1.nav-tabs > li > a {
+    padding: 20px 0 0 20px;
+    background: transparent;
+}
+
+.item1.nav-tabs > li.active > a, .item1.nav-tabs > li.active > a:hover, .item1.nav-tabs > li.active > a:focus {
+    /* border: 2px solid #ddd;
+     background: #fff;*/
+    background: transparent;
+    background-size: 70px 70px;
+    color: #00b4ec;
+    border: none;
+
+}
+
+.item1.nav-tabs > li > a:hover {
+    color: white;
+}
+
+/*----------------课程记录------------------*/
+.recordTitle {
+    font-size: 20px;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.recordList {
+    margin-left: 20px;
+    padding-top: 5px;
+    background: url(/static/images/user_img/dian.png) repeat-y 74px top;
+    padding-bottom: 50px;
+}
+
+dl {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.recordList dt {
+    margin-top: 10px;
+}
+
+.recordList dt p {
+    width: 65px;
+    height: 21px;
+    padding-right: 6px;
+    text-align: center;
+    color: #FFF;
+    background: url(/static/images/user_img/rdatebg.jpg) no-repeat;
+}
+
+.recordList dd {
+    margin: 10px 0px;
+}
+
+.record_Time {
+    float: left;
+    width: 60px;
+    height: 12px;
+    line-height: 12px;
+    margin-top: 35px;
+    color: #00baf2;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.record_jd {
+    float: left;
+    width: 9px;
+    height: 9px;
+    background: url(/static/images/user_img/jd01.png) no-repeat;
+    margin-top: 37px;
+}
+
+.record_Info {
+    float: left;
+    background: #F4F4F4;
+    position: relative;
+    margin-left: 20px;
+    width: 820px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+
+}
+
+.record_arr {
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    color: #F4F4F4;
+    position: absolute;
+    left: -8px;
+    top: 28px;
+}
+
+.record_Info p {
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+.record_Info p span {
+    width: 60px;
+    display: block;
+    float: left;
+}
+
+.record_Info p {
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+.record_Info p span {
+    width: 70px;
+    display: block;
+    float: left;
+}
+
+.record_Intro_Title a {
+    color: #00baf2;
+}
+
+.record_Action {
+    width: 70px;
+    height: 81px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: #E9E9E9;
+}
+
+.record_Action button {
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px 0px 20px;
+    border: none;
+    background: url(/static/images/user_img/start_play.png) no-repeat;
+    cursor: pointer;
+}
+
+.record_Info p {
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+.record_Action a {
+    text-align: center;
+}
+
+.clear {
+    display: block;
+    font-size: 0;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    clear: both;
+}
+
+.record_Action i.fa{
+    width: 70px;
+    height: 50px;
+    /* margin: 20px 20px 0px 20px; */
+    border: none;
+    text-align: center;
+    line-height: 55px;
+    color: #A0A0A0;
+    cursor: pointer;
+}
+.record_Action i.fa:hover{
+    color:#00b4ec;
+}
+.record_Action i.fa:before {
+    font-size: 30px;
+}
+.record_Action.cover {
+    right: 71px;
+}
+.record_Action p{
+    padding: 0;
+    text-align: center;
+}
+.record_Action p a{
+    text-align: center;
+}
+/*----------------------课程记录------end--------------*/
+/*
+#study-system .nav-tabs {
+    float: right;
+    margin-top: -10px;
+    border: none;
+    margin-right: 100px;
+}
+*/
+/*--------------------*/
+.split {
+    position: absolute;
+    width: 100%;
+    padding: 15px 30px;
+    z-index: -1;
+}
+.split hr{
+    height:1px;
+}
+/*------------------*/
+/*-----------------预约外教-----begin---------------------*/
+p.countOrders {
+   position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 18px;
+}
+
+.project-hover {
+    background-color: #00b4ec;
+}
+
+.collection-item {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.collection-item .collection-add {
+    width: 100%;
+    height: 152px;
+    line-height: 152px;
+    border: 2px solid #00b4ec;
+    text-align: center;
+    color: #00b4ec;
+}
+
+#study-system .item2 .orders {
+    padding: 30px 15px;
+
+}
+
+#study-system .item2 > div {
+    display: none;
+}
+
+#study-system .item2 > div.active {
+    display: inline-block;
+}
+
+#study-system .item2 .orders .li {
+    display: inline-block;
+    padding: 15px;
+}
+
+#study-system .item2 .orders .li .info {
+    background: url(/static/images/user_img/calendar.png) no-repeat center;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+#study-system .item2 .orders .li .info.last {
+    padding: 0;
+}
+
+#study-system .item2 .orders .li .info.last > span {
+    line-height: 100px;
+    padding: 30px 0;
+    font-size: 40px;
+    color: #6B96B7;
+}
+
+#study-system .item2 .orders .info {
+    height: 130px;
+    width: 100%;
+    min-width: 109px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 58px 0 0 0px;
+}
+
+#study-system .item2 .orders .info-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+.info-container .detail {
+    display: none;
+}
+
+#study-system .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#study-system .row {
+    width: 100%;
+    padding:0;
+    margin: 0;
+}
+
+#study-system .item2 .orders .info {
+    position: relative;
+}
+
+#study-system .item2 .orders .info > span {
+    display: block;
+}
+
+#study-system .item2 .orders .info > span.detail {
+    display: none;
+    position: absolute;
+    width: 100%;
+    bottom: 2px;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(107, 150, 183, 1);
+}
+
+#study-system .item2 .orders .info:hover span.detail {
+    display: block;
+}
+
+/*-----------------预约外教-----end---------------------*/
+
+/*-----------------收藏-----begin---------------------*/
+hr.collection-subNav-line {
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    width: 50%
+}
+
+ul.collection-subNav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+ul.collection-subNav > li {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+ul.collection-subNav > li > a {
+    font-size: 20px;
+}
+
+h4.widget-title {
+    font-size: 20px;
+
+}
+
+.widget-title > i:before {
+    font-size: 25px;
+    color: red;
+}
+
+/*-----------------收藏-----end---------------------*/
+
+/*--------------------modal------begin-----------------*/
+.modal div.modal-body.container {
+    width: 100%;
+}
+
+.modal img.book-picture {
+    height: 100px;
+
+}
+
+.modal .courseOnDetail {
+    padding: 0px 30px;
+}
+
+.modal .courseOnDetail span {
+    display: block;
+
+}
+
+.modal .courseContent {
+    padding: 15px;
+}
+
+.modal .courseContent span {
+    padding: 15px;
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+/*--------------------modal------end-----------------*/
+
+/*-----------没分类的--------begin---------*/
+.recommend .title {
+    padding-top: 50px;
+    border-color: #ddd;
+    margin-bottom:20px;
+    font-size:20px;
+}
+.recommend .title span{
+    border-bottom: 3px solid #00b4ec;
+    padding:10px 0;
+
+}
+.recommend .title hr{
+    padding: 0;
+    margin:12px auto;
+    height:1px
+}
+.recommend span.book-name {
+    display: inline-block;
+    width: 100%;
+    background: #ddd;
+    padding: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+
+}
+.recommend span.title{
+    font-size:18px;
+}
+#study-system .teacher-row.row{
+    margin-top:20px;
+}
+/*-----------没分类的--------end---------*/

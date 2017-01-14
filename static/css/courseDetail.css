@@ -1,0 +1,69 @@
+body {
+    background: #ddd;
+    /*color:#515151*/
+}
+
+/*---------------------------------main-part1-------------begin--------------------------------*/
+.main-part1 {
+    margin-top: 90px;
+}
+
+.main-part1, .main-part2 {
+    background: rgba(255, 255, 255, 0.85);
+    overflow: hidden;
+}
+
+.main-part1 .row {
+    margin: 0;
+    padding: 15px 15px 40px 15px;
+}
+
+/*----------课程标题的布局-------------begin*/
+.course-title {
+    padding: 15px 0;
+}
+
+/*------------课程标题的布局-------------end*/
+
+/*------------教材封面-----begin------------*/
+img.book-cover {
+    width: 100%;
+    height: 300px;
+    max-width: 435px;
+}
+
+/*------------教材封面-----end------------*/
+/*-----------教材的信息1（放在图片左边的）-------begin---*/
+.info1 p {
+    display: block;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.info1 hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #E6DDDD;
+}
+
+.info1 p > span {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.info1 p > span > i {
+    font-size: 30px;
+    color: red;
+}
+
+/*-----------教材的信息1（放在图片左边的）-------end---*/
+
+/*---------------------------------main-part1-------------end--------------------------------*/
+
+/*---------------------------------main-part2-------------begin--------------------------------*/
+.main-part2{
+    margin-top:30px;
+    height:300px;
+}
+/*---------------------------------main-part2-------------end--------------------------------*/
